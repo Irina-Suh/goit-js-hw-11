@@ -4,13 +4,14 @@
 import axios from 'axios';
 
 const API_KEY = '48860281-d74be350dbe4d701146d01f08'; 
-const baseUrl = "https://pixabay.com";
-const endPoint = "/api";
+// const baseUrl = "https://pixabay.com";
+// const endPoint = "/api";
 
 export function searchImg(searchName) {
  
   const params = new URLSearchParams({
-  
+ 
+
       key: API_KEY,
       q: searchName,
         image_type: 'photo',
@@ -19,7 +20,9 @@ export function searchImg(searchName) {
          per_page: 10,
 
   });
-const url = baseUrl + endPoint + `?${params}`;
+  const url = `https://pixabay.com/api?${params}`;
  
   return  axios.get(url)
+
 }
+

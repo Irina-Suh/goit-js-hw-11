@@ -27,7 +27,7 @@ form.addEventListener("submit", (e) => {
   return
   }
 
-  waitMsg.innerHTML = '"Wait, the image is loaded ..." <span class="loader"></span>'
+  waitMsg.innerHTML = '"Wait, the image is loaded" <span class="loader"></span>'
   searchImg (searchName)
     .then(response => {
       if (response.data.hits.length === 0) {
