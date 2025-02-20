@@ -12,13 +12,14 @@ export function ShowGallery(images,tagGallery){
     <li class="gallery-item">
     <a href="${image.largeImageURL}" class="gallery-link">
       
-        <img src="${image.webformatURL}"
+        <img class="li-img"
+        src="${image.webformatURL}"
              alt="${image.tags}" />
         <div class="info">
-          <p><b> Likes:</b> ${image.likes}</p>
-          <p><b> Views:</b> ${image.views}</p>
-          <p><b>Comments:</b> ${image.comments}</p>
-          <p><b>Downloads:</b> ${image.downloads}</p>
+          <p> Likes: <br>${image.likes}</br></p>
+          <p> Views: <br>${image.views}</br></p>
+          <p>Comments: <br>${image.comments}</br></p>
+          <p>Downloads: <br>${image.downloads}</br></p>
         </div>
     </a>
      </li>

@@ -5,14 +5,161 @@
   |============================
 */
 /* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  max-width: 1440px;
+}
+ul {
+  list-style-type: none;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+body {
+  padding: 32px;
+  text-align: center;
+}
+.js-img-form {
+  margin-bottom: 32px;;
+}
+
+.searchInput {
+  font-family: "Montserrat", sans-serif;
+width: 272px;
+  height: 40px;
+  border-radius: 4px;
+  background: #fff;
+  border: solid #808080;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #808080;
+  padding: 8px 16px;
+}
+
+.searchInput:hover {
+  border: solid #000000;
+}
+
+.searchInput:focus {
+  border: solid #4E75FF;
+}
+
+.btn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+  width: 91px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  text-align: center;
+  background-color: #4E75FF;
+}
+
+
+.btn:hover {
+  background-color: #6C8CFF;
+}
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+.gallery-item {
+border: 1px solid #808080;
+ 
+
+}
+.gallery__link {
+  display: flex;
+  flex-direction: column;
+}
+
+.li-img {
+  margin-bottom: 4px;
+      display: block;
+    width: 360px;
+      height: 160px;
+        object-fit: cover;
+}
+
+.info {
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+  text-align: start;
+  width: 360px;
+  height: 48px;
+}
+
+.info p
+ {
+  font-size: 12px;
+  color: #2e2f42;
+  font-family: Montserrat;
+  letter-spacing: 0.48px;
+}
+
+.info p {
+  line-height: 16px;
+  font-weight: 600;
+}
+
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 10px solid #FFF;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  inset: -10px;
+  border-radius: 50%;
+  border: 10px solid #FF3D00;
+  animation: prixClipFix 2s infinite linear;
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+  }
+}

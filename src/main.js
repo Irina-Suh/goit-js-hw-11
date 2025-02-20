@@ -1,15 +1,16 @@
 
-export const form = document.querySelector('.js-img-form');
-const input = document.querySelector(".searchInput");
-
-const waitMsg = document.querySelector(".wait-msg");
-
-
-
-import { searchImages } from "./js/pixabay-api";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-import { ShowGallery } from "./js/render-functions";
+import { ShowGallery } from "./js/render-functions"; 
+import { searchImg } from "./js/pixabay-api";
+
+export const form = document.querySelector('.js-img-form');
+const input = document.querySelector('.searchInput');
+const waitMsg = document.querySelector('.wait-msg');
+
+
+
+
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -18,31 +19,22 @@ form.addEventListener("submit", (e) => {
   let searchName = input.value.trim();
   
   if (!searchName) {
-    iziToast.show ({
-      // backgroundColor: 'rgba(239, 64, 64, 1)',
-      // messageColor: `rgba(255, 255, 255, 1)`,
-      // close: `true`,
-      // position: "topRight",
-      // title: 'Error',
-      // titleColor: '#fff',
-      // titleSize: '16px',
+    iziToast.error ({
+      position: "topRight",
+      title: 'Error',
       message: 'Input search string'
   });
   return
   }
-  waitMsg.textContent = "Wait, the image is loaded";
- // waitMsg.innerHTML = '"Wait, the image is loaded" <span class="loader"></span>'
-  searchImages(searchName)
+
+  waitMsg.innerHTML = '"Wait, the image is loaded ..." <span class="loader"></span>'
+  searchImg (searchName)
     .then(response => {
-      if (response.data.hits.length == 0) {
-        iziToast.show ({
-          // backgroundColor: 'rgba(239, 64, 64, 1)',
-          // messageColor: `rgba(255, 255, 255, 1)`,
-          // close: `true`,
-          // position: "topRight",
-          // title: 'Error',
-          // titleColor: '#fff',
-          // titleSize: '16px',
+      if (response.data.hits.length === 0) {
+        iziToast.error ({
+          close: `true`,
+          position: "topRight",
+          title: 'Error',
           message: 'Sorry, there are no images matching your search query. Please try again!'
       });
     } else {
@@ -56,7 +48,7 @@ form.addEventListener("submit", (e) => {
       waitMsg.textContent = 'Ups ...';
       console.log(error);
   })
-  
+
   form.reset()
 
 });
