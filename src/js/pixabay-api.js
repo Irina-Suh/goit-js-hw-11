@@ -1,4 +1,4 @@
-//key (required) 	str 	Your API key: 48860281-d74be350dbe4d701146d01f08
+// //key (required) 	str 	Your API key: 48860281-d74be350dbe4d701146d01f08
 
 
 import axios from 'axios';
@@ -25,4 +25,5 @@ export function searchImg(searchName) {
   return  axios.get(url)
 
 }
+
 

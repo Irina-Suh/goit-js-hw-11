@@ -3,28 +3,36 @@
 
 <head>
   <meta charset="UTF-8" />
-  <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Homework 11</title>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>goit-js-hw-11</title>
+
   <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap"
+    rel="stylesheet">
+
 </head>
 
 <body>
 
+  <main>
+    <form class="js-img-form">
 
-  <form class="js-img-form">
+      <input type="text" class="searchInput" name="search" placeholder="Search images..." required />
 
-    <input type="text" class="searchInput" name="search" placeholder="Search images..." required />
+      <button type="submit" class="btn">Search</button>
+      <p class="wait-msg"></p>
+    </form>
+    <ul class="gallery">
 
-    <button type="submit" class="btn">Search</button>
-    <p class="wait-msg"></p>
-  </form>
-  <ul class="gallery">
-
-  </ul>
+    </ul>
 
 
-
+  </main>
 
 
 

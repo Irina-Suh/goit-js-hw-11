@@ -8,10 +8,6 @@ export const form = document.querySelector('.js-img-form');
 const input = document.querySelector('.searchInput');
 const waitMsg = document.querySelector('.wait-msg');
 
-
-
-
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   
