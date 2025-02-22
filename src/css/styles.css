@@ -142,7 +142,7 @@ align-items: center;
   animation: prixClipFix 2s infinite linear;
 }
 
-@keyframes prixClipFix {
+ @keyframes prixClipFix {
   0% {
     clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
   }
@@ -162,4 +162,7 @@ align-items: center;
   100% {
     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
   }
+} 
+.hidden {
+  display: none;
 }

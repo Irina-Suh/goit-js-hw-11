@@ -2,13 +2,15 @@
 import SimpleLightbox from "simplelightbox";
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-
+ export const gallery = document.querySelector('.gallery');
+     const lightbox = new SimpleLightbox('.gallery a', {
+        captionsData: 'alt',
+        captionDelay: 250,
+    });
 
  
-export function ShowGallery(images,tagGallery){
-    
-   
-  const gallery = document.querySelector(tagGallery);
+export function ShowGallery(images){     
+
     const markup = images.map(image => `
     <li class="gallery-item">
     <a href="${image.largeImageURL}" class="gallery-link">
@@ -27,11 +29,6 @@ export function ShowGallery(images,tagGallery){
   `).join('');
   gallery.insertAdjacentHTML('afterbegin', markup);
 
+  lightbox.refresh();
 
-    const lightbox = new SimpleLightbox(tagGallery+" a", {
-        captionsData: 'alt',
-        captionDelay: 250,
-    });
-    lightbox.refresh();
-    
 }
