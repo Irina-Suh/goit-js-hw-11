@@ -41,7 +41,8 @@ form.addEventListener("submit", (e) => {
         });
         form.reset();
        
-    } else {
+      } else {
+       
       ShowGallery (response.data.hits);
     }
     waitMsg.textContent = "";
@@ -50,13 +51,14 @@ form.addEventListener("submit", (e) => {
 
     .catch(error => {
        form.reset();
-        gallery.innerHTML = '';
+       
       waitMsg.textContent = 'Ups ...';
       console.log(error);
+       gallery.innerHTML = '';
       form.reset();
     
     })
- .finally(() => { 
+    .finally(() => { 
    form.reset();   
         });
 

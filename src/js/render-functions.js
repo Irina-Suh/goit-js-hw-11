@@ -10,7 +10,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
  
 export function ShowGallery(images){     
-
+ gallery.innerHTML = '';
     const markup = images.map(image => `
     <li class="gallery-item">
     <a href="${image.largeImageURL}" class="gallery-link">
