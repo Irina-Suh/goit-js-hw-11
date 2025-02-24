@@ -20,7 +20,7 @@ export function searchImg(searchName) {
          per_page: 10,
 
   });
-  const url = `https://pixabay.com/api?${params}`;
+  const url = `https://pixabay.com/api/?${params}`;
  
   return  axios.get(url)
 
