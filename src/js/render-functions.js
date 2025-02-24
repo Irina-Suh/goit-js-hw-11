@@ -28,8 +28,8 @@ export function ShowGallery(images){
      </li>
   `).join('');
  
-  gallery.insertAdjacentHTML('afterbegin', markup);
-
+  //gallery.insertAdjacentHTML('afterbegin', markup);
+  gallery.innerHTML = markup;
   lightbox.refresh();
 
 }

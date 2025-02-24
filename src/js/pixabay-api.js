@@ -17,7 +17,7 @@ export function searchImg(searchName) {
         image_type: 'photo',
         orientation: 'horizontal',
     safesearch: 'true',
-         per_page: 10,
+        // per_page: 10,
 
   });
   const url = `https://pixabay.com/api/?${params}`;
