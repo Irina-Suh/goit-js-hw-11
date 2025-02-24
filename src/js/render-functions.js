@@ -27,6 +27,7 @@ export function ShowGallery(images){
     </a>
      </li>
   `).join('');
+ 
   gallery.insertAdjacentHTML('afterbegin', markup);
 
   lightbox.refresh();

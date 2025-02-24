@@ -11,13 +11,13 @@ const waitMsg = document.querySelector('.wait-msg');
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
+gallery.innerHTML = '';
 
   let searchName = input.value.trim();
   
   if (!searchName) {
      
-        gallery.innerHTML = '';
+      //  gallery.innerHTML = '';
     iziToast.error ({
       position: "topRight",
       title: 'Error',
@@ -28,6 +28,7 @@ form.addEventListener("submit", (e) => {
   }
 
   waitMsg.innerHTML = '"Wait, the image is loaded" <span class="loader"></span>'
+  // gallery.innerHTML = '';
   searchImg (searchName)
     .then(response => {
       if (response.data.hits.length === 0) {
@@ -42,7 +43,7 @@ form.addEventListener("submit", (e) => {
         form.reset();
        
       } else {
-       
+     //   gallery.innerHTML = '';   
       ShowGallery (response.data.hits);
     }
     waitMsg.textContent = "";
@@ -54,7 +55,7 @@ form.addEventListener("submit", (e) => {
        
       waitMsg.textContent = 'Ups ...';
       console.log(error);
-       gallery.innerHTML = '';
+     //  gallery.innerHTML = '';
       form.reset();
     
     })
